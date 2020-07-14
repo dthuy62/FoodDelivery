@@ -1,0 +1,2 @@
+rootProject.name='DDTH'
+include ':app'

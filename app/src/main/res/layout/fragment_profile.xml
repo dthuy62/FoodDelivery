@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E5E5"
+    tools:context=".Fragment.ProfileFragment">
+
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+
+        <!-- TODO: Update blank fragment layout -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="match_parent"
+                android:layout_height="731dp"
+                android:scaleType="centerCrop"
+
+                app:srcCompat="@drawable/ic_background_activity">
+
+            </ImageView>
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_login_register"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="70dp"-->
+<!--                android:background="?android:attr/selectableItemBackground"-->
+<!--                android:backgroundTint="#FF6813"-->
+<!--                android:text="Đăng nhập | Đăng ký"-->
+<!--                android:textColor="@color/bgBottomNavigation"-->
+<!--                app:cornerRadius="20dp" />-->
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/avatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="150dp"
+                android:src="@drawable/profile" />
+
+            <TextView
+                android:id="@+id/userInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="150dp"
+                android:layout_marginBottom="70dp"
+                android:textColor="@color/bgBottomNavigation"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="100dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:backgroundTint="#FF6813"
+                android:text="Đăng xuất"
+                android:textColor="@color/colorBlue"
+                app:cornerRadius="20dp" />
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
