@@ -5,25 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ddth.Common.Common;
-import com.example.ddth.Fragment.ProfileFragment;
 import com.example.ddth.MainActivity;
-import com.example.ddth.Model.User;
 import com.example.ddth.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -32,19 +24,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
@@ -71,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        txt_email = findViewById(R.id.email);
+        txt_email = findViewById(R.id.gmail);
         txt_password = findViewById(R.id.password);
         rememberMe = findViewById(R.id.checkBox);
         btnLogin = findViewById(R.id.btn_login);
@@ -84,13 +71,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-//        SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
-//        String checkbox =  preferences.getString("rememberMe","");
-//        if(checkbox.equals("true")){
-//            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//        }else if (checkbox.equals("false")){
-//            Toast.makeText(this,"Xin hãy đăng nhập", Toast.LENGTH_SHORT).show();
-//        }
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,25 +87,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
         }
         });
-//        rememberMe.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-////            @Override
-////            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-////                if(buttonView.isChecked()){
-////                    SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
-////                    SharedPreferences.Editor editor = preferences.edit();
-////                    editor.putString("rememberMe","true");
-////                    editor.apply();
-////                    Toast.makeText(LoginActivity.this,"Checked", Toast.LENGTH_SHORT).show();
-////                }
-////                else if(!buttonView.isChecked()){
-////                    SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
-////                    SharedPreferences.Editor editor = preferences.edit();
-////                    editor.putString("rememberMe","false");
-////                    editor.apply();
-////                    Toast.makeText(LoginActivity.this,"Unchecked", Toast.LENGTH_SHORT).show();
-////                }
-////            }
-////        });
 
 
         txtRegister = findViewById(R.id.txt_register);
@@ -150,6 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = auth.getCurrentUser();
+
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             finish();
                         } else {
@@ -204,6 +166,7 @@ public class LoginActivity extends AppCompatActivity {
                             if(task.getResult().getAdditionalUserInfo().isNewUser()){
                                 String email = user.getEmail();
                                 String uid = user.getUid();
+
                                 // using Hashmap
                                 HashMap<Object, String> hashMap = new HashMap<>();
                                 // put info in hashmap

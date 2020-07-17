@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5E5E5"
+    android:background="@color/bgBottomNavigation"
     tools:context=".Fragment.ProfileFragment">
 
     <RelativeLayout
@@ -29,17 +29,17 @@
 
             </ImageView>
 
-<!--            <Button-->
-<!--                android:id="@+id/btn_login_register"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_marginBottom="70dp"-->
-<!--                android:background="?android:attr/selectableItemBackground"-->
-<!--                android:backgroundTint="#FF6813"-->
-<!--                android:text="Đăng nhập | Đăng ký"-->
-<!--                android:textColor="@color/bgBottomNavigation"-->
-<!--                app:cornerRadius="20dp" />-->
+            <Button
+                android:id="@+id/btn_login_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="170dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:backgroundTint="#FF6813"
+                android:text="Đăng nhập | Đăng ký"
+                android:textColor="#091020"
+                app:cornerRadius="20dp" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/avatar"
@@ -57,7 +57,7 @@
                 android:layout_gravity="center|top"
                 android:layout_marginTop="150dp"
                 android:layout_marginBottom="70dp"
-                android:textColor="@color/bgBottomNavigation"
+                android:textColor="#091020"
                 android:textSize="24sp" />
 
             <Button

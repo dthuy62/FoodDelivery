@@ -53,17 +53,19 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
 
-//        btnLoginAndRegister = v.findViewById(R.id.btn_login_register);
+        btnLoginAndRegister = v.findViewById(R.id.btn_login_register);
         btnLogOut = v.findViewById(R.id.btn_logout);
         txtInfo = v.findViewById(R.id.userInfo);
         avatarUser = v.findViewById(R.id.avatar);
-        avatarUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(requireContext(), EditUserActivity.class));
-            }
-        });
+        user = auth.getInstance().getCurrentUser();
+        if(user != null){
 
+            avatarUser.setOnClickListener(v1 -> startActivity(new Intent(requireContext(), EditUserActivity.class)));
+
+        }
+        else {
+            avatarUser.setOnClickListener(null);
+        }
         return v;
 
     }
@@ -75,7 +77,7 @@ public class ProfileFragment extends Fragment {
             database = FirebaseDatabase.getInstance();
             databaseReference = database.getReference("Users");
             Query query = databaseReference.orderByChild("email").equalTo(user.getEmail());
-//            btnLoginAndRegister.setVisibility(View.GONE);
+            btnLoginAndRegister.setVisibility(View.GONE);
             btnLogOut.setVisibility(View.VISIBLE);
             query.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -83,14 +85,14 @@ public class ProfileFragment extends Fragment {
                     for (DataSnapshot ds: snapshot.getChildren()){
                         // get data
                         String name = ""+ds.child("name").getValue();
-                        String image = ""+ds.child("image").getValue();
+                        String  image = ""+ds.child("image").getValue();
                         txtInfo.setText(name);
                         try
                         {
                             Picasso.get().load(image).into(avatarUser);
                         }
                         catch (Exception e)
-                        {
+                            {
                             Picasso.get().load(R.drawable.profile).into(avatarUser);
                         }
                     }
@@ -104,15 +106,9 @@ public class ProfileFragment extends Fragment {
 
         }
         else {
-//            btnLoginAndRegister.setVisibility(View.VISIBLE);
+            btnLoginAndRegister.setVisibility(View.VISIBLE);
             btnLogOut.setVisibility(View.GONE);
-            btnLoginAndRegister.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    openBtnLoginAndRegister();
-                }
-            });
+            btnLoginAndRegister.setOnClickListener(v -> openBtnLoginAndRegister());
         }
     }
     @Override
@@ -123,17 +119,14 @@ public class ProfileFragment extends Fragment {
 
     }
     public void sigOut(){
-        btnLogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (v.getId() == R.id.btn_logout) {
-                    FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(requireContext(), SplashActivity.class));
-
-                }
-
+        btnLogOut.setOnClickListener(v -> {
+            if (v.getId() == R.id.btn_logout) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(requireContext(), MainActivity.class));
 
             }
+
+
         });
 
     }

@@ -6,16 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.ddth.MainActivity;
-import com.example.ddth.Model.User;
 import com.example.ddth.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -24,14 +20,10 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
-import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
     private TextInputEditText txt_email, txt_password;
@@ -47,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-        txt_email = findViewById(R.id.email);
+        txt_email = findViewById(R.id.gmail);
         txt_password = findViewById(R.id.password);
         register = findViewById(R.id.btn_register);
         progressDialog = new ProgressDialog(this);

@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:hint="Số điện thoại"
+            android:hint="Email"
             android:textColorHint="@color/bgBottomNavigation"
             app:boxStrokeColor="@color/bgBottomNavigation"
             app:boxStrokeWidthFocused="2dp"
@@ -61,12 +61,14 @@
             app:hintTextColor="@color/bgBottomNavigation">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email"
+                android:id="@+id/gmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/semibold"
+                android:text="dthuy@gmail.com"
                 android:textColor="@color/bgBottomNavigation"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                tools:text="dthuy@gmail.com" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -88,8 +90,10 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/semibold"
                 android:inputType="textPassword"
+                android:text="123456"
                 android:textColor="@color/bgBottomNavigation"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                tools:text="123456" />
 
             <CheckBox
                 android:id="@+id/checkBox"
