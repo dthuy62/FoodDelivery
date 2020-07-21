@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.ddth.Adapter.FoodAdapter;
+import com.example.ddth.CartActivity;
 import com.example.ddth.DetailsActivity;
 import com.example.ddth.Interface.ItemClickListener;
 import com.example.ddth.Model.Category;
@@ -26,6 +27,7 @@ import com.example.ddth.ViewHolder.CategoryViewHolder;
 import com.example.ddth.ViewHolder.FoodViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -47,6 +49,7 @@ public class HomeFragment extends Fragment implements ItemClickListener {
         private FirebaseRecyclerAdapter<Category, CategoryViewHolder> Categoryadapter;
         private FoodAdapter foodAdapter;
         private FirebaseRecyclerAdapter<Food, FoodViewHolder> adapter;
+        private FloatingActionButton fab;
     private ArrayList<Food> foodArrayListDetail = new ArrayList<>();
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,7 +64,11 @@ public class HomeFragment extends Fragment implements ItemClickListener {
 
             recyclerView = view.findViewById(R.id.category);
             loadCategory();
-
+            fab = view.findViewById(R.id.fab);
+            fab.setOnClickListener(v -> {
+                Intent intent = new Intent(requireContext(), CartActivity.class);
+                startActivity(intent);
+            });
 
 
 
@@ -77,7 +84,7 @@ public class HomeFragment extends Fragment implements ItemClickListener {
             protected void onBindViewHolder(@NonNull FoodViewHolder holder, int position, @NonNull Food model) {
 
                 holder.txtnameFood.setText(model.getNamefood());
-                holder.txtPrice.setText(model.getPrice());
+                holder.txtPrice.setText(Integer.toString(model.getPrice()));
                 Glide.with(getActivity()).load(model.getImg()).into(holder.imageFood);
                 holder.imageFood.setAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.fade_transition_animation));
                 holder.cardView.setAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.fade_transition_animation));
@@ -129,7 +136,7 @@ public class HomeFragment extends Fragment implements ItemClickListener {
                             protected void onBindViewHolder(@NonNull FoodViewHolder holder, int position, @NonNull Food model) {
 
                                 holder.txtnameFood.setText(model.getNamefood());
-                                holder.txtPrice.setText(model.getPrice());
+                                holder.txtPrice.setText(Integer.toString(model.getPrice()));
                                 Glide.with(getActivity()).load(model.getImg()).into(holder.imageFood);
 
                                 holder.cardView.setAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.fade_transition_animation));

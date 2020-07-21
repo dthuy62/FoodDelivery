@@ -160,6 +160,17 @@
             tools:itemCount="1"
             tools:listitem="@layout/danang_food_row_item" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_marginBottom="8dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@+id/popular_recyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_popular"
+            app:srcCompat="@drawable/ic_bx_cart_2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 <!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->

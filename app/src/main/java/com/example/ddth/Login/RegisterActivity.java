@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.ddth.MainActivity;
+import com.example.ddth.Model.Users;
 import com.example.ddth.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -32,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
 
     private FirebaseAuth firebaseAuth;
+    private Users users;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +41,9 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-        txt_email = findViewById(R.id.gmail);
-        txt_password = findViewById(R.id.password);
-        register = findViewById(R.id.btn_register);
+            txt_email = findViewById(R.id.gmail);
+            txt_password = findViewById(R.id.password);
+            register = findViewById(R.id.btn_register);
         progressDialog = new ProgressDialog(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -81,23 +83,26 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
+
+
+
                         progressDialog.dismiss();
                         FirebaseUser user = firebaseAuth.getCurrentUser();
                         // get user email and id from auth
                         String email = user.getEmail();
                         String uid = user.getUid();
                         // using Hashmap
-                        HashMap<Object, String> hashMap = new HashMap<>();
-                        // put info in hashmap
-                        hashMap.put("email", email);
-                        hashMap.put("uid",uid);
-                        hashMap.put("name", "");
-                        hashMap.put("phone", "");
-                        hashMap.put("image","");
+                        Users users = new Users(
+                                email,
+                                "",
+                                user.getDisplayName(),
+                                "",
+                                user.getUid()
+                        );
 
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference databaseReference = database.getReference("Users");
-                        databaseReference.child(uid).setValue(hashMap);
+                        databaseReference.child(uid).setValue(users);
 
                         Toast.makeText(RegisterActivity.this, "Đang đăng ký...\n"+user.getEmail(),Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RegisterActivity.this, MainActivity.class));

@@ -1,7 +1,7 @@
 package com.example.ddth.Common;
 
-import com.example.ddth.Model.User;
+import com.example.ddth.Model.Users;
 
 public class Common {
-    public static User currentUser;
+    public static Users currentUser;
 }

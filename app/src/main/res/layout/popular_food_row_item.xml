@@ -16,7 +16,7 @@
 
 
         <ImageView
-            android:id="@+id/food_image"
+            android:id="@+id/image_food_order"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:adjustViewBounds="true"
@@ -42,7 +42,7 @@
             app:layout_constraintEnd_toStartOf="@+id/food_price"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/food_image" />
+            app:layout_constraintTop_toBottomOf="@+id/image_food_order" />
 
         <TextView
             android:id="@+id/food_price"

@@ -26,9 +26,9 @@ public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     public FoodViewHolder(@NonNull View itemView) {
         super(itemView);
         cardView = itemView.findViewById(R.id.card_view);
-        txtnameFood = itemView.findViewById(R.id.name_food);
-        txtPrice = itemView.findViewById(R.id.txt_price);
-        imageFood =itemView.findViewById(R.id.food_image);
+        txtnameFood = itemView.findViewById(R.id.txt_name_food);
+        txtPrice = itemView.findViewById(R.id.txt_price_food);
+        imageFood =itemView.findViewById(R.id.image_food);
         itemView.setOnClickListener(this);
 
     }

@@ -2,22 +2,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:title="Home"
+
         android:id="@+id/home"
-        android:icon="@drawable/ic_icons8_home">
+        android:icon="@drawable/ic_icons8_home"
+        android:title="Home">
+
+    </item>
+    <item
+
+        android:id="@+id/order"
+        android:icon="@drawable/ic_order"
+        android:title="Đơn hàng">
 
     </item>
 
     <item
-        android:title="Yêu thích"
         android:id="@+id/favorite"
-        android:icon="@drawable/ic_heart">
+        android:icon="@drawable/ic_heart"
+        android:title="Yêu thích">
 
     </item>
     <item
-        android:title="Tôi"
         android:id="@+id/profile"
-        android:icon="@drawable/ic_account">
+        android:icon="@drawable/ic_account"
+        android:title="Tôi">
 
     </item>
 </menu>

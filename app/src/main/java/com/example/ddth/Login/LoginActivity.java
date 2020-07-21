@@ -15,7 +15,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ddth.Common.Common;
 import com.example.ddth.MainActivity;
+import com.example.ddth.Model.Users;
 import com.example.ddth.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -45,9 +47,8 @@ public class LoginActivity extends AppCompatActivity {
     private TextView txtRegister;
     private ImageButton Google;
     private CheckBox rememberMe;
-
     private FirebaseAuth auth;
-
+    private Users users;
     ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,18 +168,19 @@ public class LoginActivity extends AppCompatActivity {
                                 String email = user.getEmail();
                                 String uid = user.getUid();
 
-                                // using Hashmap
-                                HashMap<Object, String> hashMap = new HashMap<>();
-                                // put info in hashmap
-                                hashMap.put("email", email);
-                                hashMap.put("uid",uid);
-                                hashMap.put("name", "");
-                                hashMap.put("phone", "");
-                                hashMap.put("image","");
+                                Users users = new Users(
+                                        email,
+                                        user.getPhotoUrl().toString(),
+                                        user.getDisplayName(),
+                                        "",
+                                        user.getUid()
+
+                                );
+
 
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                                 DatabaseReference databaseReference = database.getReference("Users");
-                                databaseReference.child(uid).setValue(hashMap);
+                                databaseReference.child(uid).setValue(users);
 
                             }
 

@@ -62,10 +62,10 @@ public class DanangFoodAdapter extends RecyclerView.Adapter<DanangFoodAdapter.Da
         public DanangFoodViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageView = itemView.findViewById(R.id.food_image);
-            price  = itemView.findViewById(R.id.txt_price);
+            imageView = itemView.findViewById(R.id.image_food_order);
+            price  = itemView.findViewById(R.id.txt_price_food_order);
             restaurent = itemView.findViewById(R.id.res_name);
-            name = itemView.findViewById(R.id.name_food);
+            name = itemView.findViewById(R.id.txt_name_food_order);
             rating = itemView.findViewById(R.id.txt_rating);
             img_rating = itemView.findViewById(R.id.img_rating);
         }

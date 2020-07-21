@@ -14,9 +14,10 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/food_image"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/image_food_order"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
             android:adjustViewBounds="true"
             android:elevation="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -25,78 +26,28 @@
             app:srcCompat="@drawable/asiafood1" />
 
         <TextView
-            android:id="@+id/txt_price"
+            android:id="@+id/txt_price_food_order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/semibold"
-            android:text="$500"
+            android:text="500"
             android:textColor="#FF6813"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/food_image"
-            app:layout_constraintTop_toBottomOf="@+id/name_food" />
+            app:layout_constraintStart_toStartOf="@+id/txt_name_food_order"
+            app:layout_constraintTop_toBottomOf="@+id/txt_name_food_order" />
 
         <TextView
-            android:id="@+id/name_food"
+            android:id="@+id/txt_name_food_order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/semibold"
             android:text="Đinh Thanh Huy"
             android:textColor="#091020"
             android:textSize="15sp"
-            app:layout_constraintStart_toEndOf="@+id/food_image"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txt_rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:fontFamily="@font/regular"
-            android:text="4.5"
-            android:textColor="#091020"
-            app:layout_constraintBottom_toBottomOf="@+id/img_rating"
-            app:layout_constraintStart_toEndOf="@+id/img_rating"
-            app:layout_constraintTop_toTopOf="@+id/img_rating"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageView
-            android:id="@+id/img_rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/name_food"
-            app:layout_constraintTop_toBottomOf="@+id/txt_price"
-            app:srcCompat="@drawable/ic_baseline_star_24" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:text="30 phút"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_rating"
-            app:layout_constraintStart_toEndOf="@+id/txt_rating"
-            app:layout_constraintTop_toTopOf="@+id/txt_rating" />
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:fontFamily="@font/semibold"
-            android:text="Số lượng"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image_food_order"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

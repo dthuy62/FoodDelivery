@@ -20,6 +20,13 @@
 
     </fragment>
     <fragment
+        android:id="@+id/order"
+        android:name="com.example.ddth.Fragment.OrderFragment"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order">
+
+    </fragment>
+    <fragment
         android:id="@+id/home"
         android:name="com.example.ddth.Fragment.HomeFragment"
         android:label="fragment_home"

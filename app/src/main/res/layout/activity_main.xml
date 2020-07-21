@@ -21,6 +21,7 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_graph" />
     </androidx.core.widget.NestedScrollView>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
@@ -33,6 +34,9 @@
         app:navigationIcon="@drawable/ic_menu_black_24dp">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -53,98 +53,98 @@
                 android:textSize="14sp" />
         </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-100dp"
-            android:padding="20dp">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="-100dp"-->
+<!--            android:padding="20dp">-->
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="125dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="@color/colorBlue"
-                app:cardElevation="10dp">
-
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="5dp">
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_centerHorizontal="true" />
-
-                    <TextView
-                        android:id="@+id/no_cmt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/semibold"
-                        android:includeFontPadding="false"
-                        android:text="No Comment"
-                        android:textColor="@color/bgBottomNavigation"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/no_cmt"
-                        android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/semibold"
-                        android:includeFontPadding="false"
-                        android:text="No Like"
-                        android:textColor="@color/bgBottomNavigation"
-                        android:textSize="20sp" />
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="125dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="@color/colorBlue"
-                app:cardElevation="10dp">
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="125dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:layout_weight="1"-->
+<!--                app:cardBackgroundColor="@color/colorBlue"-->
+<!--                app:cardElevation="10dp">-->
 
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="5dp">
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:padding="5dp">-->
 
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_centerHorizontal="true" />
+<!--                    <ImageView-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:layout_centerHorizontal="true" />-->
 
-                    <TextView
-                        android:id="@+id/no_like"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/semibold"
-                        android:includeFontPadding="false"
-                        android:text="No Comment"
-                        android:textColor="@color/bgBottomNavigation"
-                        android:textSize="20sp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/no_cmt"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        android:fontFamily="@font/semibold"-->
+<!--                        android:includeFontPadding="false"-->
+<!--                        android:text="No Comment"-->
+<!--                        android:textColor="@color/bgBottomNavigation"-->
+<!--                        android:textSize="20sp" />-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/no_like"
-                        android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/semibold"
-                        android:includeFontPadding="false"
-                        android:text="No Like"
-                        android:textColor="@color/bgBottomNavigation"
-                        android:textSize="20sp" />
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_below="@id/no_cmt"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:fontFamily="@font/semibold"-->
+<!--                        android:includeFontPadding="false"-->
+<!--                        android:text="No Like"-->
+<!--                        android:textColor="@color/bgBottomNavigation"-->
+<!--                        android:textSize="20sp" />-->
+<!--                </RelativeLayout>-->
+<!--            </com.google.android.material.card.MaterialCardView>-->
+
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="125dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:layout_weight="1"-->
+<!--                app:cardBackgroundColor="@color/colorBlue"-->
+<!--                app:cardElevation="10dp">-->
+
+
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:padding="5dp">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:layout_centerHorizontal="true" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/no_like"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        android:fontFamily="@font/semibold"-->
+<!--                        android:includeFontPadding="false"-->
+<!--                        android:text="No Comment"-->
+<!--                        android:textColor="@color/bgBottomNavigation"-->
+<!--                        android:textSize="20sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_below="@id/no_like"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:fontFamily="@font/semibold"-->
+<!--                        android:includeFontPadding="false"-->
+<!--                        android:text="No Like"-->
+<!--                        android:textColor="@color/bgBottomNavigation"-->
+<!--                        android:textSize="20sp" />-->
+<!--                </RelativeLayout>-->
+<!--            </com.google.android.material.card.MaterialCardView>-->
+<!--        </LinearLayout>-->
 
 
         <LinearLayout

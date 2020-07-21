@@ -122,7 +122,7 @@ public class ProfileFragment extends Fragment {
         btnLogOut.setOnClickListener(v -> {
             if (v.getId() == R.id.btn_logout) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(requireContext(), MainActivity.class));
+                startActivity(new Intent(requireContext(), LoginActivity.class));
 
             }
 

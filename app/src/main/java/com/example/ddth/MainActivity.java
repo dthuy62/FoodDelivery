@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.home:
                     navController.navigate(R.id.home);
                     break;
+                case R.id.order:
+                    navController.navigate(R.id.order);
+                    break;
                 case R.id.favorite:
                     navController.navigate(R.id.favorite);
                     break;

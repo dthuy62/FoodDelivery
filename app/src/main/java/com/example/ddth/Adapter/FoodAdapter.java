@@ -15,11 +15,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.ddth.DetailsActivity;
-import com.example.ddth.Fragment.HomeFragment;
 import com.example.ddth.Interface.ItemClickListener;
 import com.example.ddth.Model.Food;
 import com.example.ddth.R;
-import com.nostra13.universalimageloader.utils.L;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,13 +54,13 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         Food food = foodList.get(position);
         holder.imageFood.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_transition_animation));
         holder.txtnameFood.setText(food.getNamefood());
-        holder.txtPrice.setText(food.getPrice());
+        holder.txtPrice.setText(Integer.toString(food.getPrice()));
         String uri = food.getImg();
         Glide.with(holder.itemView.getContext()).load(uri).into(holder.imageFood);
         holder.cardView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_transition_animation));
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), DetailsActivity.class);
-            intent.putExtra("FoodID", foodList.get(position).getIdCategory());
+            intent.putExtra("FoodId", foodList.get(position).getIdCategory());
             context.startActivity(intent);
         });
     }
@@ -82,9 +81,9 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
             cardView = itemView.findViewById(R.id.card_view);
-            txtnameFood = itemView.findViewById(R.id.name_food);
-            txtPrice = itemView.findViewById(R.id.txt_price);
-            imageFood =itemView.findViewById(R.id.food_image);
+            txtnameFood = itemView.findViewById(R.id.txt_name_food);
+            txtPrice = itemView.findViewById(R.id.txt_price_food);
+            imageFood =itemView.findViewById(R.id.image_food);
 
 
             itemView.setOnClickListener(this);
