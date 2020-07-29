@@ -16,15 +16,21 @@ import com.example.ddth.Model.PopularFood;
 import com.example.ddth.R;
 
 import java.util.List;
+import java.util.Random;
 
 public class PopularFoodApdater extends RecyclerView.Adapter<PopularFoodApdater.PopularFoodViewHolder> {
 
     Context context;
     List<PopularFood> popularFoodList;
+    private Random random;
 
     public PopularFoodApdater(Context context, List<PopularFood> popularFoodList) {
         this.context = context;
         this.popularFoodList = popularFoodList;
+    }
+
+    public PopularFoodApdater(int seed) {
+        this.random = new Random(seed);
     }
 
     @NonNull

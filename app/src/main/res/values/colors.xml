@@ -7,4 +7,6 @@
     <color name="bgBottomNavigation">#FFFFFF</color>
     <color name="black">#091020</color>
     <color name="orange">#FF6813</color>
+    <color name="yellow">#FFB800</color>
+
 </resources>

@@ -26,7 +26,7 @@ public class Database extends SQLiteAssetHelper  {
         SQLiteDatabase    db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
-        String[] sqlSelect ={ "ProductName", "ProductId","Quantity", "Price", "Discount" };
+        String[] sqlSelect ={"ID", "ProductName", "ProductId","Quantity", "Price", "Discount" };
         String sqlTable = "OrderDetail";
         qb.setTables(sqlTable);
 
@@ -36,7 +36,9 @@ public class Database extends SQLiteAssetHelper  {
         if(cursor.moveToFirst())
         {
             do {
-                result.add(new Order(cursor.getString(cursor.getColumnIndex("ProductId")),
+                result.add(new Order(
+                        cursor.getInt(cursor.getColumnIndex("ID")),
+                        cursor.getString(cursor.getColumnIndex("ProductId")),
                         cursor.getString(cursor.getColumnIndex("ProductName")),
                         cursor.getInt(cursor.getColumnIndex("Quantity")),
                         cursor.getInt(cursor.getColumnIndex("Price")),
@@ -65,6 +67,37 @@ public class Database extends SQLiteAssetHelper  {
         SQLiteDatabase db = getReadableDatabase();
         String query = String.format("DELETE FROM OrderDetail");
         db.execSQL(query); // thuc hien truy van ma khong co du lieu return;
+
+    }
+    public void addToFavorites(String foodId)
+    {
+        SQLiteDatabase db = getReadableDatabase();
+        String query = String.format("INSERT INTO Favorites(FoodId) VALUES('&s'); ",foodId);
+        db.execSQL(query);
+
+    }
+    public void removeFromFavorites(String foodId){
+        SQLiteDatabase db = getReadableDatabase();
+        String query = String.format("DELETE FROM Favorites WHERE FoodId='&s';",foodId);
+        db.execSQL(query);
+    }
+    public boolean isFavorites(String foodId){
+        SQLiteDatabase db = getReadableDatabase();
+        String query = String.format("SELECT * FROM Favorites WHERE FoodId='&s';",foodId);
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.getCount()<0)
+        {
+            cursor.close();
+            return false;
+        }
+        cursor.close();
+        return true;
+    }
+
+    public void updateCart(Order order) {
+        SQLiteDatabase db = getReadableDatabase();
+        String query = String.format("UPDATE Orderdetail SET Quantity = %s WHERE ID = %d ",order.getQuantity(), order.getID());
+        db.execSQL(query);
 
     }
 }

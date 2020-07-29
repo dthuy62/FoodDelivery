@@ -75,18 +75,25 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = txt_email.getText().toString();
-                String password = txt_password.getText().toString().trim();
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    // invalid email
-                    txt_email.setError("Email không đúng định dạng");
-                    txt_email.setFocusable(true);
+                if (Common.isConnectedToInternet(getBaseContext())) {
+
+
+                    String email = txt_email.getText().toString();
+                    String password = txt_password.getText().toString().trim();
+                    if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                        // invalid email
+                        txt_email.setError("Email không đúng định dạng");
+                        txt_email.setFocusable(true);
+                    } else {
+                        // valid email
+                        loginUser(email, password);
+                    }
                 }
-                else {
-                    // valid email
-                    loginUser(email, password);
+                else
+                {
+                    Toast.makeText(LoginActivity.this,"Không có kết nối mạng",Toast.LENGTH_SHORT).show();
                 }
-        }
+            }
         });
 
 

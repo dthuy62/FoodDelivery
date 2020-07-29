@@ -31,6 +31,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -99,7 +100,8 @@ public class OrderFragment extends Fragment {
     }
 
     private void loadViewOrder(){
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Requests");
+        Query ref = FirebaseDatabase.getInstance().getReference("Requests").orderByChild("uid").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        Log.d("cac","alo alo  " +FirebaseAuth.getInstance().getUid());
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

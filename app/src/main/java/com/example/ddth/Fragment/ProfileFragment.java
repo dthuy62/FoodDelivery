@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.example.ddth.EditUserActivity;
 import com.example.ddth.Login.LoginActivity;
 import com.example.ddth.MainActivity;
+import com.example.ddth.Model.User;
 import com.example.ddth.R;
 import com.example.ddth.SplashActivity;
 import com.firebase.ui.auth.AuthUI;
@@ -71,6 +72,7 @@ public class ProfileFragment extends Fragment {
     }
     private void checkUserStatus(){
          user = auth.getInstance().getCurrentUser();
+
 
 
         if (user != null) {

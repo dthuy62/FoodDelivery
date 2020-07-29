@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.ddth.Common.Common;
 import com.example.ddth.MainActivity;
 import com.example.ddth.Model.Users;
 import com.example.ddth.R;
@@ -53,23 +54,28 @@ public class RegisterActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email =  txt_email.getText().toString().trim();
-                String password = txt_password.getText().toString().trim();
+                if (Common.isConnectedToInternet(getBaseContext())) {
 
-                // validate
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    // set error
-                      txt_email.setError("Email không hợp lệ");
-                      txt_email.setFocusable(true);
+
+                    String email = txt_email.getText().toString().trim();
+                    String password = txt_password.getText().toString().trim();
+
+                    // validate
+                    if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                        // set error
+                        txt_email.setError("Email không hợp lệ");
+                        txt_email.setFocusable(true);
+                    } else if (password.length() < 6) {
+                        txt_password.setError("Mật khẩu quá ngắn");
+                        txt_password.setFocusable(true);
+                    } else {
+                        registerUser(email, password);
+                    }
                 }
-                else if(password.length()<6){
-                    txt_password.setError("Mật khẩu quá ngắn");
-                    txt_password.setFocusable(true);
-                }
-                else {
-                    registerUser(email, password);
-                }
+                else
+                    Toast.makeText(RegisterActivity.this, "Không có kết nối mạng",Toast.LENGTH_SHORT).show();
             }
+
         });
 
 

@@ -11,4 +11,21 @@
         <item name="android:windowBackground">@drawable/splash_drawble</item>
     </style>
 
+    <!-- Ratting Dialog -->
+    <style name="RattingDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/bgBottomNavigation</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/RattingDialogButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/RattingDialogButtonStyle</item>
+    </style>
+
+    <style name="RattingDialogButtonStyle" parent="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="RatingFadeAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
 </resources>

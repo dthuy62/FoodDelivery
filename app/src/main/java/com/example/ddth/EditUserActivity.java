@@ -1,8 +1,11 @@
 package com.example.ddth;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -34,6 +37,8 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
     FirebaseUser user;
     FirebaseDatabase database;
     DatabaseReference databaseReference;
+    private ProgressDialog progressDialog;
+    String _USERNAME, _EMAIL, _PHONE;
     FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +50,39 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         txt_email = findViewById(R.id.gmail);
         txt_phone = findViewById(R.id.phone);
         update = findViewById(R.id.btn_update_user);
+
+        progressDialog = new ProgressDialog(this);
+
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showEditProfile();
+            }
+        });
         avatarUser = findViewById(R.id.avatar_image);
-//        String username = user.getDisplayName();
-//        txt_fullname.setText(username);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
         update.setOnClickListener(this);
+    }
+
+    private void showEditProfile() {
+        String options[] = {"Sửa Tên", "Sửa số điện thoại", "Thay đổi ảnh đại diện"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Alo Alo");
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (which == 0) {
+                    // image
+                } else if (which == 1) {
+                    // name
+                } else if (which == 2) {
+                    // phone
+                }
+            }
+        });
+        builder.create().show();
     }
     public void loadProfile(){
         user = auth.getInstance().getCurrentUser();
@@ -85,51 +119,32 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
             }
         });
     }
-    public void updateProfile(){
-        user = auth.getInstance().getCurrentUser();
-        if(user!=null){
-            database = FirebaseDatabase.getInstance();
-            databaseReference = database.getReference("Users");
-            String nameUser = txt_fullname.getText().toString();
-            UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
-                    .setDisplayName(nameUser).build();
+    public void updateProfile(View view){
 
-            if(TextUtils.isEmpty(nameUser)){
-                txt_fullname.setError("Tên trống");
-            }
-            else {
-                mUser.updateProfile(profileChangeRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(EditUserActivity.this,"Cập nhật thành công", Toast.LENGTH_SHORT).show();
-                        }
-                        else {
-                            Toast.makeText(EditUserActivity.this,"Cập nhật thất bại", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-            }
-
-        }
-        else
-        {
-            Toast.makeText(this, "No user signed in", Toast.LENGTH_SHORT).show();
-        }
-
+//        if(isNameChange() || isPhoneChange())
+//        {
+//            Toast.makeText(this, "Cập thông tin thành công", Toast.LENGTH_SHORT).show();
+//        }
 
     }
+
+//    private boolean isPhoneChange() {
+////        if(!txt_fullname.getEd)
+//    }
+//
+//    private boolean isNameChange() {
+//    }
 
     @Override
     protected void onStart() {
         super.onStart();
         loadProfile();
-        updateProfile();
+//        updateProfile(view);
     }
+
 
     @Override
     public void onClick(View v) {
 
-        if(v.getId()==R.id.btn_update_user);
     }
 }

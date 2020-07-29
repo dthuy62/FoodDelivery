@@ -47,32 +47,31 @@
         app:srcCompat="@drawable/ic_notification" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edit_search"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/search_bg"
-        android:drawableLeft="@drawable/ic_search_black_24dp"
         android:drawablePadding="8dp"
         android:ems="10"
         android:hint="@android:string/search_go"
         android:inputType="textPersonName"
         android:paddingStart="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/short_img"
+        app:layout_constraintEnd_toStartOf="@+id/search_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_search" />
 
     <ImageView
-        android:id="@+id/short_img"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:id="@+id/search_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_search"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editText"
-        app:srcCompat="@drawable/ic_short" />
+        app:layout_constraintTop_toTopOf="@+id/edit_search"
+        app:srcCompat="@drawable/quantum_ic_search_grey600_24" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -83,7 +82,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText">
+        app:layout_constraintTop_toBottomOf="@+id/edit_search">
 
 
 
@@ -165,11 +164,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            app:backgroundTint="@color/orange"
             app:fabSize="mini"
             app:layout_constraintBottom_toTopOf="@+id/popular_recyclerView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txt_popular"
             app:srcCompat="@drawable/ic_bx_cart_2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

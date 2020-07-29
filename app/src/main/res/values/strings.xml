@@ -2,4 +2,7 @@
     <string name="app_name">DDTH</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="facebook_app_id">222225335598516</string>
+    <string name="facebook_login_protocol_name">fb222225335598516</string>
+    <string name="places_api_key">AIzaSyARz2uFli8R5NiITWCJDVK2FduGwdeB2YE</string>
 </resources>

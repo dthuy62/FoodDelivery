@@ -11,6 +11,5 @@
         android:id="@+id/listOrder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:itemCount="3"
         tools:listitem="@layout/item_order_status" />
 </RelativeLayout>

@@ -13,7 +13,7 @@ import com.example.ddth.R;
 
 public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView txtnameFood,txtPrice;
-    public ImageView imageFood, imageRatting;
+    public ImageView imageFood, imageRatting, imageFavorites;
 
     public CardView cardView;
 
@@ -29,6 +29,7 @@ public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         txtnameFood = itemView.findViewById(R.id.txt_name_food);
         txtPrice = itemView.findViewById(R.id.txt_price_food);
         imageFood =itemView.findViewById(R.id.image_food);
+        imageFavorites = itemView.findViewById(R.id.fav);
         itemView.setOnClickListener(this);
 
     }

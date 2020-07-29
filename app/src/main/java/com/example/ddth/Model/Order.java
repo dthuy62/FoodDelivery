@@ -1,12 +1,29 @@
 package com.example.ddth.Model;
 
 public class Order {
+
+    private int ID;
     private String ProductId;
     private String ProductName;
     private int Quantity;
     private int Price;
     private String Discount;
+    public Order(int ID, String productId, String productName, int quantity, int price, String discount) {
+        this.ID = ID;
+        ProductId = productId;
+        ProductName = productName;
+        Quantity = quantity;
+        Price = price;
+        Discount = discount;
+    }
 
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 
     public String getProductId() {
         return ProductId;

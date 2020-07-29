@@ -52,15 +52,16 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
 
         Food food = foodList.get(position);
+//        holder.imageFavorites.setImageResource(foodList.get(position));
         holder.imageFood.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_transition_animation));
         holder.txtnameFood.setText(food.getNamefood());
-        holder.txtPrice.setText(Integer.toString(food.getPrice()));
+        holder.txtPrice.setText(String.valueOf(food.getPrice()));
         String uri = food.getImg();
         Glide.with(holder.itemView.getContext()).load(uri).into(holder.imageFood);
         holder.cardView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_transition_animation));
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), DetailsActivity.class);
-            intent.putExtra("FoodId", foodList.get(position).getIdCategory());
+            intent.putExtra("FoodId", foodList.get(position).getId());
             context.startActivity(intent);
         });
     }
@@ -76,7 +77,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
     public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView txtnameFood,txtPrice;
-        public ImageView imageFood, imageRatting;
+        public ImageView imageFood, imageRatting, imageFavorites;
         public CardView cardView;
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -84,7 +85,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
             txtnameFood = itemView.findViewById(R.id.txt_name_food);
             txtPrice = itemView.findViewById(R.id.txt_price_food);
             imageFood =itemView.findViewById(R.id.image_food);
-
+            imageFavorites = itemView.findViewById(R.id.fav);
 
             itemView.setOnClickListener(this);
 

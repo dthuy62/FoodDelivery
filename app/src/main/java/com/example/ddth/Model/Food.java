@@ -1,13 +1,24 @@
 package com.example.ddth.Model;
 
 public class Food {
-    private String IdCategory, IdRestaurent, Namefood, Img, Desc, Discount, Address;
+    private String IdCategory;
+    private String IdRestaurent;
+    private String Namefood;
+    private String Img;
+    private String Desc;
+    private String Discount;
+    private String Address;
+    private String id;
     private Integer Price;
+
+
+
+
 
     public Food() {
     }
 
-    public Food(String idCategory, String idRestaurent, String namefood, String img, String desc, String discount, String address, Integer price) {
+    public Food(String idCategory, String idRestaurent, String namefood, String img, String desc, String discount, String address,String id, Integer price) {
         IdCategory = idCategory;
         IdRestaurent = idRestaurent;
         Namefood = namefood;
@@ -16,6 +27,7 @@ public class Food {
         Discount = discount;
         Address = address;
         Price = price;
+        id = id;
     }
 
     public String getIdCategory() {
@@ -80,5 +92,12 @@ public class Food {
 
     public void setPrice(Integer price) {
         Price = price;
+    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
