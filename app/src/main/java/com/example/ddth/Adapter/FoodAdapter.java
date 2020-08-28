@@ -2,6 +2,7 @@ package com.example.ddth.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,8 @@ import com.example.ddth.DetailsActivity;
 import com.example.ddth.Interface.ItemClickListener;
 import com.example.ddth.Model.Food;
 import com.example.ddth.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 import java.util.ArrayList;
@@ -25,7 +28,7 @@ import java.util.List;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder> {
     private Context context;
-    private List<Food> foodList = new ArrayList<>();
+    private List<Food> foodList;
     private ItemClickListener itemClickListener;
 
     public FoodAdapter(List<Food> foodList, ItemClickListener itemClickListener){
@@ -63,13 +66,20 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
             Intent intent = new Intent(v.getContext(), DetailsActivity.class);
             intent.putExtra("FoodId", foodList.get(position).getId());
             context.startActivity(intent);
+            foodList.get(holder.getAdapterPosition()).setClick(foodList.get(holder.getAdapterPosition()).getClick() + 1 );
+            Log.d("click do", "bo may thich the day "+foodList.get(position).getClick());
+
         });
+
+
+
     }
 
 
 
     @Override
     public int getItemCount() {
+
         return foodList.size();
     }
 

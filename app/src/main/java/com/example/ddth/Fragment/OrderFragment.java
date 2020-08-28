@@ -101,7 +101,8 @@ public class OrderFragment extends Fragment {
 
     private void loadViewOrder(){
         Query ref = FirebaseDatabase.getInstance().getReference("Requests").orderByChild("uid").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        Log.d("cac","alo alo  " +FirebaseAuth.getInstance().getUid());
+
+        Log.d("cc","alo alo  " +FirebaseAuth.getInstance().getUid());
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -164,8 +165,9 @@ public class OrderFragment extends Fragment {
         if(status.equals("0"))
             return "Đã đặt hàng";
         else if (status.equals("1"))
-            return "Đang giao";
-        else
             return "Đã giao";
+        else if(status.equals("2"))
+            return "Đang giao";
+        return status;
     }
 }

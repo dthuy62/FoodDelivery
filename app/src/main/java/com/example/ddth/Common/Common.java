@@ -8,6 +8,8 @@ import com.example.ddth.Model.Users;
 import com.example.ddth.Model.Ratting;
 
 public class Common {
+    public static final String SHIPPERS_TABLE = "Shippers" ;
+    public static final String ORDER_NEED_SHIPPER_TABLE = "OrderNeedShipper" ;
     public static Users currentUser;
 
     public static boolean isConnectedToInternet(Context context)

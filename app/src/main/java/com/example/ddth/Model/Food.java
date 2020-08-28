@@ -10,6 +10,7 @@ public class Food {
     private String Address;
     private String id;
     private Integer Price;
+    private int Click;
 
 
 
@@ -18,7 +19,15 @@ public class Food {
     public Food() {
     }
 
-    public Food(String idCategory, String idRestaurent, String namefood, String img, String desc, String discount, String address,String id, Integer price) {
+    public Integer getClick() {
+        return Click;
+    }
+
+    public void setClick(int click) {
+        Click = click;
+    }
+
+    public Food(String idCategory, String idRestaurent, String namefood, String img, String desc, String discount, String address, String id, Integer price, Integer click) {
         IdCategory = idCategory;
         IdRestaurent = idRestaurent;
         Namefood = namefood;
@@ -28,6 +37,7 @@ public class Food {
         Address = address;
         Price = price;
         id = id;
+        click = click;
     }
 
     public String getIdCategory() {

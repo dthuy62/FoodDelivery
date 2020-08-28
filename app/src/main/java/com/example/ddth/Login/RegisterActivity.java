@@ -103,7 +103,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 "",
                                 user.getDisplayName(),
                                 "",
-                                user.getUid()
+                                user.getUid(),
+                                "0"
                         );
 
                         FirebaseDatabase database = FirebaseDatabase.getInstance();

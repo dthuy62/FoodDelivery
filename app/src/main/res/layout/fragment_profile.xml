@@ -50,27 +50,25 @@
                     android:layout_marginTop="250dp">
 
                     <TextView
+                        android:id="@+id/manageOrder"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
                         android:fontFamily="@font/semibold"
                         android:gravity="center"
                         android:text="Quản lý đơn đặt hàng"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp">
-
                     <TextView
+                        android:id="@+id/manageShipper"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/semibold"
+                        android:layout_marginTop="50dp"
                         android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/semibold"
                         android:gravity="center"
-                        android:text="Ví Voucher"
+                        android:text="Quản lý shipper"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 

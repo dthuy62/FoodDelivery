@@ -30,18 +30,19 @@
                 android:includeFontPadding="false"
                 android:text="Kết quả cho : "
                 android:textColor="@color/bgBottomNavigation"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
+
             <TextView
                 android:id="@+id/result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
                 android:layout_marginLeft="200sp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="@font/semibold"
                 android:includeFontPadding="false"
                 android:text=" "
                 android:textColor="@color/bgBottomNavigation"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
 
         </RelativeLayout>
@@ -67,9 +68,9 @@
                     android:padding="5dp">
 
                     <ImageView
+                        android:id="@+id/image_result_search"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_centerHorizontal="true"
                         android:src="@drawable/asiafood1" />
 
                 </RelativeLayout>
@@ -88,8 +89,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewSearch"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:listitem="@layout/danang_food_row_item">
+                android:layout_height="wrap_content">
 
             </androidx.recyclerview.widget.RecyclerView>
 

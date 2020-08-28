@@ -216,6 +216,7 @@ public class CartActivity extends AppCompatActivity {
                             carts,
                             users.uid,
                             ""
+
 //                                    +String.format("%s,%s", shippingAddress.getLatLng().latitude,shippingAddress.getLatLng().longitude)
                     );
 

@@ -337,9 +337,9 @@ public class HomeFragment extends Fragment implements ItemClickListener {
             @NonNull
             @Override
             public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.category_item, parent, false);
-                return new CategoryViewHolder(view);
+                    View view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.category_item, parent, false);
+                    return new CategoryViewHolder(view);
             }
         };
         recyclerView.setAdapter(Categoryadapter);

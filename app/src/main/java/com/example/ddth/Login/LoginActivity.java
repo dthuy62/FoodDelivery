@@ -180,7 +180,8 @@ public class LoginActivity extends AppCompatActivity {
                                         user.getPhotoUrl().toString(),
                                         user.getDisplayName(),
                                         "",
-                                        user.getUid()
+                                        user.getUid(),
+                                        ""
 
                                 );
 

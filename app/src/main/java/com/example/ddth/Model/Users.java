@@ -8,6 +8,7 @@ public class Users {
     public String name;
     public String phone;
     public String uid;
+    public String rule;
 
 
 
@@ -53,12 +54,21 @@ public class Users {
         this.uid = uid;
     }
 
-    public Users(String email, String image, String name, String phone, String uid) {
+    public String getRule() {
+        return rule;
+    }
+
+    public void setRule(String rule) {
+        this.rule = rule;
+    }
+
+    public Users(String email, String image, String name, String phone, String uid, String rule) {
         this.email = email;
         this.image = image;
         this.name = name;
         this.phone = phone;
         this.uid = uid;
+        this.rule = rule;
     }
 
     public Users() {

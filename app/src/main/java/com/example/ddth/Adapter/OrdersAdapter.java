@@ -11,14 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ddth.Interface.ItemClickListener;
 import com.example.ddth.Model.Requests;
-import com.example.ddth.Model.Users;
 import com.example.ddth.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,8 +58,8 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrderViewH
             super(itemView);
             txtOrderId = itemView.findViewById(R.id.txt_order_id);
             txtOrderPhone = itemView.findViewById(R.id.txt_order_phone);
-            txtOrderStt = itemView.findViewById(R.id.txt_order_status);
-            txtOrderAddress = itemView.findViewById(R.id.txt_order_address);
+            txtOrderStt = itemView.findViewById(R.id.txt_shipper_name);
+            txtOrderAddress = itemView.findViewById(R.id.txt_shipper_phone);
         }
 
         @Override

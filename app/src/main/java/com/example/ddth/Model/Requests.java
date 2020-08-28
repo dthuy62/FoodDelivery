@@ -14,7 +14,6 @@ public class Requests {
 
 
 
-
     public Requests() {
     }
 
@@ -27,6 +26,7 @@ public class Requests {
         this.foods = foods;
         this.uid = uid;
         this.latLng = latLng;
+
     }
 
     public String getPhone() {
